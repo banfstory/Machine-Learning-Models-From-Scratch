@@ -1,4 +1,13 @@
 # Machine-Learning-Models-From-Scartch
+This project involves several machine learning models that were coded from scartch, these include:
+
+* Linear Regression
+* Logistic Regression
+* K-Nearest Neighbors
+* K-Means Clustering
+* Neural Network
+* Gaussian Naive Bayes
+* Multinomial Naive Bayes
 
 ## Resources Used for Projects
 The resources are the datasets which are used to feed into the machine learning models in order to train the models.
