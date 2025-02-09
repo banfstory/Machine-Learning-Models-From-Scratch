@@ -5,8 +5,8 @@ from GaussianNaiveBayes import GaussianNaiveBayes
 
 # this is the data that will be processed into the model
 df = pd.read_csv(os.path.join(os.path.dirname(__file__), 'breast-cancer-wisconsin.data')) # the source of the data came from this link: https://archive.ics.uci.edu/dataset/15/breast+cancer+wisconsin+original
-df.replace('?', -99999, inplace=True)
-df.drop(['id'], axis=1, inplace=True)
+df = df[df['bare_nuclei'] != '?']
+df = df.drop(['id'], axis=1)
 df.loc[(df['class'] == 2), 'class'] = 0
 df.loc[(df['class'] == 4), 'class'] = 1
 df = df.astype(int)

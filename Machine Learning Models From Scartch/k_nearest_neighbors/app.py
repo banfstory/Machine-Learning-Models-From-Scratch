@@ -5,8 +5,8 @@ from KNearestNeighbors import KNearestNeighbors
 
 # this is the data that will be processed into the model
 df = pd.read_csv(os.path.join(os.path.dirname(__file__), 'breast-cancer-wisconsin.data')) # the source of the data came from this link: https://archive.ics.uci.edu/dataset/15/breast+cancer+wisconsin+original
-df.replace('?', -99999, inplace=True)
-df.drop(['id'], axis=1, inplace=True)
+df = df[df['bare_nuclei'] != '?']
+df = df.drop(['id'], axis=1)
 x = df.drop(['class'],axis=1)
 y = df['class']
 x_train, x_test, y_train, y_test = model_selection.train_test_split(x,y,test_size=0.2)

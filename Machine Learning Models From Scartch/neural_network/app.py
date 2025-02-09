@@ -5,8 +5,8 @@ from NeuralNetwork import NeuralNetwork, Dense, Activation
     
 # this is the data that will be processed into the neural network
 df = pd.read_csv(os.path.join(os.path.dirname(__file__), 'breast-cancer-wisconsin.data')) # the source of the data came from this link: https://archive.ics.uci.edu/dataset/15/breast+cancer+wisconsin+original
-df.replace('?', -99999, inplace=True)
-df.drop(['id'], axis=1, inplace=True)
+df = df[df['bare_nuclei'] != '?']
+df = df.drop(['id'], axis=1)
 x = df.drop(['class'],axis=1)
 x = x.astype(float)
 y = df['class']
